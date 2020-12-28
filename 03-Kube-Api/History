@@ -1,0 +1,24 @@
+ 186  mkdir 03-Kube-Api
+  187  ls
+  188  cat /etc/kubernetes/manifests/kube-apiserver.yaml
+  189  kubectl get pods -n kube-system
+  190  kubectl cluster-info
+  191  kubectl api-versions
+  192  kubectl api-resources
+  193  kubectl proxy --address='172.31.0.10' --port=8001 --accept-hosts='.' --accept-paths='.' &
+  194  curl  172.31.0.10:8001
+  195  curl  172.31.0.10:8001/
+  196  curl  172.31.0.10:8001/api
+  197  kubectl config view
+  198  kubectl get pods
+  199  cd /root/.kube/
+  200  ls
+  201  cat config
+  202  ls
+  203  cd ..
+  204  ls
+  205  cat  /root/.kube/config
+  206  ls
+  207  cd k8s-paypal-28-Dec-2020/
+  208  ls
+  209  cd 03-Kube-Api/
