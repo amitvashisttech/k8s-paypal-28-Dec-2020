@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: helloworld-controller
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     app: docker-get-started
   template:
@@ -17,3 +17,5 @@ spec:
         ports:
         - name: nodejs-port
           containerPort: 80
+      imagePullSecrets:
+      - name: regcred
