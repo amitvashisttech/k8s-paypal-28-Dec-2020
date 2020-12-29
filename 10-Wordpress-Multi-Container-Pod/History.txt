@@ -1,0 +1,20 @@
+   58  cd 10-Wordpress-Multi-Container-Pod/
+   67  ls
+   68  cat wordpress-secrets.yml
+   69  ls
+   70  cat wordpress-service.yml
+   71  ls
+   72  vim wordpress-deployment.yml
+   73  ls
+   74  cd ..
+   75  ls
+   76  kubectl create -f 10-Wordpress-Multi-Container-Pod/
+   77  kubectl get svc,deploy,secrets,pod
+   78  kubectl get pod
+   79  kubectl describe pod wordpress-deployment-7d4896594c-kcqzf
+   80  kubectl get pod
+   81  kubectl describe pod wordpress-deployment-7d4896594c-kcqzf
+   82  kubectl get svc
+   83  kubectl get pod
+   84  kubectl exec -it wordpress-deployment-7d4896594c-kcqzf -c mysql -- mysql -u root -p
+   
