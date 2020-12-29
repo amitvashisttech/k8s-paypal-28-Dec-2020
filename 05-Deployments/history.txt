@@ -62,3 +62,12 @@
   351  kubectl rollout undo deployment helloworld-deployment --to-revision=1
   352  ls
   353  kubectl get pods
+
+------------------ Pause & Resume ---------------------------------
+  396  kubectl rollout history deployment helloworld-deployment
+  397  kubectl rollout pause deployment helloworld-deployment
+  398  kubectl set image deploy helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  399  kubectl rollout history deployment helloworld-deployment
+  400  kubectl describe  pod/helloworld-deployment-78cf6987f9-pwz5m
+  401  kubectl rollout resume deployment helloworld-deployment
+  402  kubectl describe pod/helloworld-deployment-558759896c-6kc6x
