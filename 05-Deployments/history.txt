@@ -1,0 +1,64 @@
+290  mkdir 05-Deployments
+  291  cd 05-Deployments/
+  292  ls
+  293  vim helloworld.yaml
+  294  ls
+  295  kubectl get pods
+  296  kubectl delete -f ../04-ReplicationCantroller/helloworld-rc.yaml
+  297  ls
+  298  kubectl create -f helloworld.yaml
+  299  kubectl get deploy
+  300  kubectl get pod
+  301  kubectl get rs
+  302  kubectl get deploy,rs,pod
+  303  kubectl scale --replicas=5 deployment helloworld-deployment
+  304  kubectl get deploy,rs,pod
+  305  kubectl describe pod pod/helloworld-deployment-78cf6987f9-rltt9
+  306  kubectl describe pod helloworld-deployment-78cf6987f9-rltt9
+  307  kubectl get deploy,rs,pod
+  308  kubectl decribe deploy helloworld-deployment
+  309  kubectl describe deploy helloworld-deployment
+  310  kubectl describe deploy helloworld-deployment-78cf6987f9
+  311  kubectl describe rs helloworld-deployment-78cf6987f9
+  312  kubectl describe deploy helloworld-deployment-78cf6987f9
+  313  kubectl describe rs helloworld-deployment-78cf6987f9
+  314  kubectl set image deploy helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2
+  315  kubectl describe deploy helloworld-deployment
+  316  kubectl get rs
+  317  kubectl describe rs helloworld-deployment-558759896c
+  318  kubectl describe deploy helloworld-deployment
+  319  kubectl rollout history deployment  helloworld-deployment
+  320  kubectl rollout history deployment  helloworld-deployment --revision=1
+  321  kubectl rollout history deployment  helloworld-deployment --revision=2
+  322  kubectl rollout history deployment  helloworld-deployment
+  323  kubectl set image deploy helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  324  kubectl rollout history deployment  helloworld-deployment
+  325  kubectl rollout status deployment helloworld-deployment
+  326  kubectl rollout undo deployment helloworld-deployment
+  327  kubectl set image deploy helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  328  kubectl rollout status deployment helloworld-deployment
+  329  kubectl rollout undo deployment helloworld-deployment
+  330  kubectl rollout status deployment helloworld-deployment
+  331  kubectl rollout history deployment helloworld-deployment
+  332  kubectl rollout undo deployment helloworld-deployment
+  333  kubectl rollout history deployment helloworld-deployment
+  334  kubectl rollout undo deployment helloworld-deployment
+  335  kubectl rollout history deployment helloworld-deployment
+  336  kubectl set image deploy helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:4 --record
+  337  kubectl rollout history deployment helloworld-deployment
+  338  kubectl rollout history deployment helloworld-deployment --revision=1
+  339  kubectl rollout history deployment helloworld-deployment --revision=8
+  340  kubectl get rs
+  341  kubectl get deploy
+  342  kubectl get pods
+  343  kubectl describe pod helloworld-deployment-7447757969-dt679
+  344  kubectl rollout history deployment helloworld-deployment
+  345  kubectl rollout undo deployment helloworld-deployment --to-revision=7
+  346  kubectl rollout history deployment helloworld-deployment
+  347  kubectl get rs
+  348  kubectl get pods
+  349  kubectl describe pod helloworld-deployment-ff6c77c8-ktqkh
+  350  kubectl rollout history deployment helloworld-deployment
+  351  kubectl rollout undo deployment helloworld-deployment --to-revision=1
+  352  ls
+  353  kubectl get pods
