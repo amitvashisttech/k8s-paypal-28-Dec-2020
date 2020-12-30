@@ -1,0 +1,30 @@
+    1  kubectl get pods -n kube-system
+    2  ls
+    3  vim busybox.yaml
+    4  ls
+    5  kubectl create -f busybox.yaml
+    6  kubectl get pods 
+    7  kubectl delete pod busybox-1
+    8  kubectl get pods 
+    9  kubectl exec -it busybox -- /bin/sh 
+   10  ls
+   11  vim custom-dns.yaml
+   12  ls
+   13  vim custom-dns.yaml
+   14  kubectl create -f custom-dns.yaml 
+   15  kubectl get pods 
+   16  kubectl exec -it custom-dns-example -- cat /etc/resolv.conf 
+   17  kubectl exec -it busybox -- cat /etc/resolv.conf 
+   18  ls
+   19  vim busybox-headless.yaml
+   20  ls
+   21  kubectl create -f busybox-headless.yaml
+   22  kubectl get pods 
+   23  kubectl get svc
+   24  kubectl exec -it busybox -- nslookup default-subdomain
+   25  kubectl exec -it busybox -- nslookup wordpress-service
+   26  kubectl exec -it busybox -- nslookup busybox-1.default-subdomain.default.svc.cluster.local
+   27  kubectl exec -it busybox -- nslookup 192.168.5.6
+   28  ls
+   29  history 
+   30  history > History.txt
