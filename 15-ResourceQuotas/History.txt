@@ -1,0 +1,98 @@
+    1  cd 15-ResourceQuotas/
+    2  ls
+    3  kubectl get ns 
+    4  ls
+    5  vim resourcequota.yaml
+    6  ls
+    7  kubectl create -f resourcequota.yaml 
+    8  kubectl get resourcequota
+    9  kubectl get resourcequota -n myspace
+   10  kubectl describe resourcequota compute-quota -n myspace
+   11  kubectl describe resourcequota object-quota -n myspace
+   12  kubectl get secrets -n myspace
+   13  cp -rf ../14-Namespaces/helloworld.yaml helloworld-with-no-quota.yaml
+   14  ls
+   15  vim helloworld-with-no-quota.yaml 
+   16  ls
+   17  kubectl create -f helloworld-with-no-quota.yaml 
+   18  kubectl get deploy 
+   19  kubectl get deploy -n myspace
+   20  kubectl get pod -n myspace
+   21  kubectl get pods -n myspace
+   22  kubectl config view 
+   23  kubectl config get-contexts
+   24  kubectl config get-contexts --current --namespace=myspace
+   25  kubectl config set-contexts --current --namespace=myspace
+   26  kubectl config set-context --current --namespace=myspace
+   27  kubectl config get-contexts
+   28  kubectl get pods
+   29  kubectl get deploy 
+   30  kubectl get rs 
+   31  kubectl describe rs helloworld-deployment-78cf6987f9
+   32  ls
+   33  kubectl delete -f helloworld-with-no-quota.yaml 
+   34  kubectl get rs 
+   35  vim helloworld-with-quota.yaml 
+   36  kubectl create -f helloworld-with-quota.yaml 
+   37  kubectl get deploy 
+   38  kubectl describe deploy helloworld-deployment
+   39  kubectl get rs 
+   40  kubectl describe rs helloworld-deployment-6dc57c75b4
+   41  kubectl get resourcequota
+   42  kubectl get resourcequota compute-quota
+   43  kubectl describe resourcequota compute-quota
+   44  kubectl edit resourcequota compute-quota
+   45  kubectl describe resourcequota compute-quota
+   46  kubectl get deploy 
+   47  kubectl edit resourcequota compute-quota
+   48  ls
+   49  vim resourcequota.yaml 
+   50  kubectl apply -f resourcequota.yaml 
+   51  kubectl describe resourcequota compute-quota
+   52  vim resourcequota.yaml 
+   53  ls
+   54  rm 1
+   55  ls
+   56  kubectl get pods 
+   57  kubectl describe helloworld-deployment 
+   58  kubectl describe deploy helloworld-deployment 
+   59  vim helloworld-with-quota.yaml 
+   60  ls
+   61  kubectl apply  -f helloworld-with-quota.yaml
+   62  kubectl describe deploy helloworld-deployment 
+   63  kubectl get pods 
+   64  kubectl delete -f helloworld-with-quota.yaml 
+   65  ls
+   66  kubectl create  -f helloworld-with-quota.yaml 
+   67  kubectl get pods 
+   68  kubectl get rs 
+   69  kubectl describe rs helloworld-deployment-7f67d984dd
+   70  q
+   71  vim helloworld-with-quota.yaml 
+   72  ls
+   73  kubectl apply -f helloworld-with-quota.yaml
+   74  kubectl get rs 
+   75  kubectl get pods 
+   76  kubectl get deploy 
+   77  kubectl delete -f helloworld-with-quota.yaml 
+   78  ls
+   79  kubectl create  -f helloworld-with-quota.yaml 
+   80  kubectl get deploy 
+   81  kubectl get pods
+   82  vim resourcequota.yaml 
+   83  kubectl describe rq
+   84  kubectl describe resourcequota
+   85  vim resourcequota.yaml 
+   86  kubectl apply -f resourcequota.yaml
+   87  kubectl describe resourcequota
+   88  vim resourcequota.yaml 
+   89  kubectl describe resourcequota
+   90  kubectl delete -f helloworld-with-quota.yaml 
+   91  kubectl create -f helloworld-with-quota.yaml 
+   92  kubectl describe resourcequota
+   93  kubectl get pods 
+   94  kubectl scale --replicas=10 deploy helloworld-deployment
+   95  kubectl get pods 
+   96  kubectl describe resourcequota
+   97  ls
+   98  history > History.txt 
