@@ -1,0 +1,35 @@
+   83  mkdir 13-ConfigMap
+   84  ls
+   85  cd 13-ConfigMap/
+   86  ls
+   87  vim nginx-pod.yml
+   88  ls
+   89  vim nginx-service.yaml
+   90  vim reverseproxy.conf
+   91  kubectl get configmap
+   92  kubectl create configmap nginx-config --from-file=reverseproxy.conf -o yaml --dry-run
+   93  kubectl get configmap
+   94  kubectl create configmap nginx-config --from-file=reverseproxy.conf -o yaml --dry-run > ConfigMap.yaml
+   95  vim ConfigMap.yaml
+   96  ls
+   97  cd ..
+   98  ls
+   99  kubectl create -f 13-ConfigMap/
+  100  kubectl get configmap
+  101  kubectl describe configmap nginx-config
+  102  kubectl get pods
+  103  kubectl describe pods helloworld-nginx
+  104  kubectl get svc
+  105  kubectl exec -it  helloworld-nginx -c nginx -- bash
+  106  ls
+  107  cd k8s-paypal-28-Dec-2020; git add . ; git commit -m "13-ConfigMap"; git push
+  108  ls
+  109  cd 12-Service-Discovery/
+  110  ls
+  111  vim helloworld-app-deployment.yml
+  112  ls
+  113  cd ..
+  114  ls
+  115  history
+  116  ls
+  117  cd 13-ConfigMap/
