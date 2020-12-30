@@ -1,0 +1,48 @@
+    1  ls
+    2  kubectl get ns 
+    3  cd 14-Namespaces/
+    4  kubectl create ns myspace
+    5  kubectl get ns 
+    6  kubectl delete ns myspace
+    7  kubectl get ns 
+    8  kubectl create ns myspace -o yaml --dry-run > namespace-defination.yaml
+    9  ls
+   10  cat namespace-defination.yaml 
+   11  ls
+   12  cp -rf ../05-Deployments/helloworld.yaml 
+   13  cp -rf ../05-Deployments/helloworld.yaml .
+   14  ls
+   15  cat helloworld.yaml 
+   16  cp -rf helloworld.yaml helloworld-with-myspace.yaml 
+   17  ls
+   18  rm -rf helloworld-with-myspace.yaml 
+   19  ls
+   20  kubectl create -f helloworld.yaml 
+   21  kubectl get pods 
+   22  kubectl get ns 
+   23  kubectl create -f namespace-defination.yaml 
+   24  kubectl create -f helloworld.yaml -n myspace
+   25  kubectl get deployment 
+   26  kubectl get deployment -n myspace
+   27  kubectl describe deployment helloworld-deployment -n myspace
+   28  kubectl describe deployment helloworld-deployment 
+   29  kubectl delete deployment helloworld-deployment -n myspace
+   30  kubectl delete deployment helloworld-deployment 
+   31  ls
+   32  kubectl get deploy --all-namespaces
+   33  ls
+   34  kubectl create -f helloworld.yaml -n myspace -o yaml --dry=run
+   35  kubectl create -f helloworld.yaml -n myspace -o yaml --dry-run
+   36  kubectl create -f helloworld.yaml -n myspace -o yaml --dry-run >  helloworld-with-ns.yaml
+   37  ls
+   38  cd ..
+   39  ls
+   40  kubectl create -f 14-Namespaces/
+   41  kubectl get deploy --all-namespaces
+   42  ls
+   43  kubectl delete -f 14-Namespaces/
+   44  git add . ; git commit -m "14-Namespaces"; git push 
+   45  ls
+   46  cd 14-Namespaces/
+   47  ls
+   48  history > history.txt
