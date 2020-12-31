@@ -1,0 +1,21 @@
+   54  cp -rf ../05-Deployments/helloworld.yaml .
+   55  ls
+   56  vim helloworld.yaml
+   57  ls
+   58  kubectl create -f helloworld.yaml --dry-run
+   59  vim helloworld.yaml
+   60  kubectl create -f helloworld.yaml --dry-run
+   61  ls
+   62  kubectl create -f helloworld.yaml
+   63  kubectl get pods
+   64  kubectl get statefulset
+   65  kubectl scale --replicas=10 statefulset helloworld-statefull
+   66  kubectl delete pod helloworld-statefull-0 helloworld-statefull-3 helloworld-statefull-7
+   67  kubectl scale --replicas=2 statefulset helloworld-statefull
+   68  kubectl scale --replicas=10 statefulset helloworld-statefull
+   69  kubectl describe statefulset
+   70  kubectl set image k8s-demo=amitvashist7/k8s-tiny-web:2 statefulset helloworld-statefull --record
+   71  kubectl set image statefulset helloworld-statefull k8s-demo=amitvashist7/k8s-tiny-web:2
+   72  kubectl rollout status statefulset helloworld-statefull
+   73  kubectl describe pod helloworld-statefull-0
+   74  kubectl describe pod helloworld-statefull-9
