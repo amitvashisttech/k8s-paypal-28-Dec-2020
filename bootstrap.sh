@@ -3,6 +3,7 @@
 # Update hosts file
 echo "[TASK 1] Update /etc/hosts file"
 cat >>/etc/hosts<<EOF
+172.16.16.100 loadbalancer.example.com  loadbalancer
 172.16.16.101 kmaster1.example.com kmaster1
 172.16.16.102 kmaster2.example.com kmaster2
 172.16.16.103 kmaster3.example.com kmaster3
