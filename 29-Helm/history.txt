@@ -1,0 +1,17 @@
+  658  helm create mychart
+  659  ls
+  660  cd mychart/
+  661  ls
+  662  cat Chart.yaml
+  663  ls
+  664  cd templates/
+  665  ls
+  666  vim service.yaml
+  667  ls
+  668  cd ..
+  669  ls
+  670  vim values.yaml
+  671  cd ..
+  672  ls
+  673  helm install my-nginx mychart --dry-run
+  674  helm install my-nginx mychart
